@@ -1,0 +1,19 @@
+{
+  "name": "welcomeinmigrants",
+  "version": "1.0.0",
+  "description": "Es una red social dirigida a la poblacion migrante para compartir datos de alimentacion educacion y salud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaritoDasilva/welcomeInmigrants.git"
+  },
+  "author": "Carolina Da Silva, Ismary Salges y Paula Araya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaritoDasilva/welcomeInmigrants/issues"
+  },
+  "homepage": "https://github.com/CaritoDasilva/welcomeInmigrants#readme"
+}
