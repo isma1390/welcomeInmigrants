@@ -55,3 +55,23 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error(e);
   }
 });
+
+//Logout cerrar sesión
+
+
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+      firebase.auth().signOut()
+    .then(function() {
+        //El usuario ahora ya tiene la sesión cerrada, vamos a la página de log-in
+    })
+    .catch(function(error) {
+        //Hubo un error mientras se cerraba la sesión
+    });
+    });
+  } else {
+    document.getElementById("firebaseui-auth-container").innerHTML = "";
+        ui.start('#firebaseui-auth-container', uiConfig);
+  }
+});
