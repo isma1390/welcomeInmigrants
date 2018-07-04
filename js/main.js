@@ -9,7 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// Initialize Firebase
+//  Initialize Firebase
 var config = {
   apiKey: "AIzaSyAgX6hSSO9TqHkhLJzFmBLLczE8GuMCsoo",
   authDomain: "welcome-inmigrants.firebaseapp.com",
@@ -57,13 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Logout cerrar sesión
-
-
+const logoutBtn = document.getElementById("logoutBtn")
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    document.getElementById("logoutBtn").addEventListener("click", function () {
-      firebase.auth().signOut()
-    .then(function() {
+    logoutBtn.addEventListener("click", function () {
+      firebase.auth().signOut().then(function() {
         //El usuario ahora ya tiene la sesión cerrada, vamos a la página de log-in
     })
     .catch(function(error) {
