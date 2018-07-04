@@ -80,3 +80,44 @@
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 
+[debug] [2018-07-04T18:48:47.587Z] ----------------------------------------------------------------------
+[debug] [2018-07-04T18:48:47.590Z] Command:       /home/caritodasilva/.nvm/versions/node/v8.11.3/bin/node /home/caritodasilva/.nvm/versions/node/v8.11.3/bin/firebase serve
+[debug] [2018-07-04T18:48:47.591Z] CLI Version:   3.19.1
+[debug] [2018-07-04T18:48:47.591Z] Platform:      linux
+[debug] [2018-07-04T18:48:47.591Z] Node Version:  v8.11.3
+[debug] [2018-07-04T18:48:47.591Z] Time:          Wed Jul 04 2018 14:48:47 GMT-0400 (STD)
+[debug] [2018-07-04T18:48:47.591Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-04T18:48:47.735Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-04T18:48:47.735Z] > authorizing via signed-in user
+[debug] [2018-07-04T18:48:47.739Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-04T18:48:47.739Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/DnYJfnnZSZG4FLjrs0fT-r9vYvwpI-5movAgtuGDJdw',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Jul 04 2018 14:48:47 GMT-0400 (STD)
+[debug] [2018-07-04T18:48:48.154Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-04T18:48:48.279Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/welcome-inmigrants  
+  
+ Wed Jul 04 2018 14:48:48 GMT-0400 (STD)
+[debug] [2018-07-04T18:48:49.449Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-04T18:48:49.451Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/welcome-inmigrants/tokens  
+  
+ Wed Jul 04 2018 14:48:49 GMT-0400 (STD)
+[debug] [2018-07-04T18:48:50.135Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-04T18:48:50.137Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/welcome-inmigrants  
+  
+ Wed Jul 04 2018 14:48:50 GMT-0400 (STD)
+[debug] [2018-07-04T18:48:51.332Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/mnt/c/Users/CaroyMitz/Documents/CosasDeMama/LABORATORIA/proyecto-3/welcomeInmigrants'...
+[info] 
+[debug] [2018-07-04T18:48:51.343Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/517706659234/clients/_:getWebAppConfig  
+  
+ Wed Jul 04 2018 14:48:51 GMT-0400 (STD)
+[debug] [2018-07-04T18:48:51.835Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

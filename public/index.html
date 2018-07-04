@@ -24,41 +24,11 @@
 <body>
   <div id="firebaseui-auth-container"></div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-      // // The Firebase SDK is initialized and available here!
-      //
-      // firebase.auth().onAuthStateChanged(user => { });
-      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-      // firebase.messaging().requestPermission().then(() => { });
-      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-      //
-      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-      try {
-        let app = firebase.app();
-        const uiConfig = {
-          signInSuccessUrl: '/',
-          signInOptions: [ // Leave the lines as is for the providers you want to offer
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          ], // Terms of service
-          tosUrl: '/terms-of-service'
-        };
-        let ui = new firebaseui.auth.AuthUI(firebase.auth());
-        firebase.auth().onAuthStateChanged(function (user) {
-          if (user) {
-            document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
-          } else {
-            document.getElementById("firebaseui-auth-container").innerHTML = "";
-            ui.start('#firebaseui-auth-container', uiConfig);
-          }
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    });
-  </script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>
