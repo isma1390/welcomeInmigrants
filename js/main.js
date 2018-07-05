@@ -44,3 +44,14 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error(e);
   }
 });
+
+  
+out.addEventListener('click', () => {
+  firebase.auth().signOut().then(function () {
+    // Sign-out successful.
+  }).catch(function (error) {
+    // An error happened.
+  });
+});
+
+
