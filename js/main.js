@@ -1,3 +1,5 @@
+//Variables Globales
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyAgX6hSSO9TqHkhLJzFmBLLczE8GuMCsoo",
@@ -8,6 +10,8 @@ var config = {
   messagingSenderId: "517706659234"
 };
 firebase.initializeApp(config);
+
+let provider = new firebase.auth.GoogleAuthProvider();
 
 //Autenticación
 
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tosUrl: '/terms-of-service'
     };
     let ui = new firebaseui.auth.AuthUI(firebase.auth());
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
       } else {
@@ -43,4 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (e) {
     console.error(e);
   }
+});
+out.addEventListener('click', () => {
+  firebase.auth().signOut().then(function () {
+    // Sign-out successful.
+  }).catch(function (error) {
+    // An error happened.
+  });
 });
