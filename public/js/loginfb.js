@@ -15,5 +15,3 @@ provider.addScope('user_friends');
 //       console.log('Detectado un error:', error);
 //     });
 // })
-
-
