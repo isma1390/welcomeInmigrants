@@ -10,49 +10,23 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 
-<body>
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '{1988688747807881}',
-        cookie: true,
-        xfbml: true,
-        version: '{v3.0}'
-      });
+  <body>
 
-      FB.AppEvents.logPageView();
+    <div id="firebaseui-auth-container"></div>
+    <u id="out">Sign Out</u>
+    <div id="post"></div>
 
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        return;
-      }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <div id="firebaseui-auth-container"></div>
-  <u id="out">Sign Out</u>
-  <div id="post"></div>
-
-
-  <!-- botón para cierre de sesión -->
-  <button id="logoutBtn">Logout</button> 
-
-  <div id="firebaseui-auth-container"></div>
-
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/loginfb.js"></script>
-</body>
+    <!-- Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/loginfb.js"></script>
+    <script src="js/deletePost.js"></script>
+  </body>
 
 </html>
