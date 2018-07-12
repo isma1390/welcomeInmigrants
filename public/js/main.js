@@ -13,15 +13,24 @@ firebase.initializeApp(config);
 
 let provider = new firebase.auth.GoogleAuthProvider();
 
-//Autenticación Google, Email, Facebook
+//Autenticación
 
 document.addEventListener('DOMContentLoaded', function () {
-  
+  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  // // The Firebase SDK is initialized and available here!
+  //
+  // firebase.auth().onAuthStateChanged(user => { });
+  // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+  // firebase.messaging().requestPermission().then(() => { });
+  // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+  //
+  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
   try {
     let app = firebase.app();
     const uiConfig = {
       signInSuccessUrl: '/',
-      signInOptions: [ // Leave the lines as is for the providers you want to offer 
+      signInOptions: [ // Leave the lines as is for the providers you want to offer
         firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.EmailAuthProvider.PROVIDER_ID,
         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       ], // Terms of service
