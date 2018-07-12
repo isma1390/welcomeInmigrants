@@ -14,4 +14,8 @@ provider.addScope('user_friends');
 //     .catch(function (error) {
 //       console.log('Detectado un error:', error);
 //     });
+
 // })
+
+
+
