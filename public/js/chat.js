@@ -1,5 +1,5 @@
-window.onload = () => {
-
+function chatting() {
+  console.log("Setting up chat listener...");
   firebase.database().ref('messages')
     .limitToLast(2) // Filtro para no obtener todos los mensajes
     .once('value')
@@ -15,6 +15,7 @@ window.onload = () => {
   firebase.database().ref('messages')
     .limitToLast(1)
     .on('child_added', (newMessage) => {
+      console.log("Nuevo mensaje > " + newMessage.val().text);
       messageContainer.innerHTML += `
                 <p>Nombre : ${newMessage.val().creatorName}</p>
                 <p>${newMessage.val().text}</p>
@@ -28,7 +29,8 @@ window.onload = () => {
 // Usaremos una colección para guardar los mensajes, llamada messages
 function sendMessage() {
   const currentUser = firebase.auth().currentUser;
-  const messageAreaText = txt.value;
+  const messageAreaTextChat = txt.value;
+  txt.value = "";
 
   //Para tener una nueva llave en la colección messages
   const newMessageKey = firebase.database().ref().child('messages').push().key;
@@ -36,6 +38,6 @@ function sendMessage() {
   firebase.database().ref(`messages/${newMessageKey}`).set({
     creator: currentUser.uid,
     creatorName: currentUser.displayName,
-    text: messageAreaText
+    text: messageAreaTextChat
   });
 }
