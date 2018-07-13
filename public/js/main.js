@@ -57,4 +57,6 @@ out.addEventListener('click', () => {
     }).catch(function (error) {
       // An error happened.
     });
+
 });
+
