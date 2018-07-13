@@ -13,21 +13,31 @@
   <!-- Link para la librería para la interfaz gráfica de la autentificación -->
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <link rel="stylesheet" href="css/style.css">
+
   
 </head>
 
 <body>
-  <section class="firtSection"> 
 
-  <div id="firebaseui-auth-container"></div>
-  <u id="out">Sign Out</u>
-  <div id="post"></div>
+  <div class="container-fluid">
+    <div id="firebaseui-auth-container"></div>
+    <u id="out">Sign Out</u>
+    <div id="post"></div>
+    <div id="messageContainer"></div>
+    <div class="row">
 
+      <label for="exampleFormControlTextarea1"></label>
+      <textarea class="form-control" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+        
  
-</section>
-
 
 <!-- Post Usuario -->
+      <div id="post"></div>
+
 <section class="secondSection">
   <div class="pos-f-t">
 
@@ -96,6 +106,11 @@
 <!-- Salida Post Uusuario -->
 
 
+ 
+
+    </div>
+  </div>
+
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
@@ -108,6 +123,7 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
+  <script src="js/chat.js"></script>
   <script src="js/main.js"></script>
   <script src="js/loginfb.js"></script>
   <script src="js/post.js"></script>

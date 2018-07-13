@@ -51,9 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 out.addEventListener('click', () => {
-  firebase.auth().signOut().then(function () {
-    // Sign-out successful.
-  }).catch(function (error) {
-    // An error happened.
-  });
+  firebase.auth().signOut()
+    .then(function () {
+      // Sign-out successful.
+    }).catch(function (error) {
+      // An error happened.
+    });
 });
