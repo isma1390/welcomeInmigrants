@@ -17,14 +17,10 @@
 
 <body>
 
-
-
-
-
   <div class="container-fluid">
     <div id="firebaseui-auth-container"></div>
     <u id="out">Sign Out</u>
-    <div id="post"></div>
+
     <div id="messageContainer"></div>
     <div class="row">
 
@@ -33,28 +29,29 @@
     </div>
     <div class="row">
       <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+    </div>
 
-
-
+    <div class="row">
       <!-- Post Usuario -->
-      <div id="post" ></div>
-
-      <section class="secondSection">
-
-        <div id="postPrint">
-          <button id="deletePost">DELETE</button>
-        </div>
-
-        <input id="messageArea" type="text" placeholder="Escriba su mensaje ">
-        <button id="sendPost">SEND</button>
-      </section>
-      <!-- Salida Post Uusuario -->
-
-
-
+      <div id="post"></div>
 
     </div>
+    <section class="secondSection">
+      <div id="postPrint">
+
+
+
+      </div>
+      <input id="messageArea" type="text" placeholder="Escriba su mensaje ">
+      <button id="sendPost">SEND</button>
+    </section>
+    <!-- Salida Post Uusuario -->
+
+
+
+
   </div>
+
 
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
@@ -72,6 +69,7 @@
   <script src="js/main.js"></script>
   <script src="js/post.js"></script>
   <script src="js/loginfb.js"></script>
+  <script src="js/window.js"></script>
 </body>
 
 </html>
