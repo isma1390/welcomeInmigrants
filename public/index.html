@@ -6,20 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome to Firebase Hosting</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-  crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-
-
-  <!-- Link para la librería para la interfaz gráfica de la autentificación -->
+ crossorigin="anonymous">
+<!-- Link para la librería para la interfaz gráfica de la autentificación -->
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
   <link rel="stylesheet" href="css/style.css">
-
+<link rel="stylesheet" href="css/stylePost.css">
   
 </head>
 
 <body>
 
+  <!-- Login -->
   <div class="container-fluid">
     <div id="firebaseui-auth-container"></div>
     <u id="out">Sign Out</u>
@@ -40,30 +38,21 @@
 
 <section class="secondSection">
   <div class="pos-f-t">
-
-    <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
     
     <nav class="navbar navbar-dark" style= "background-color: #26A69A;" > 
       <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
-      <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
+
       <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
         aria-label="Toggle navigation">
         
         <span class="navbar-toggler-icon"></span>
       </button>
     </nav>
-    <!-- Vertical Navs dentro de un div-->
-    <!-- no colocamos ni container ni section por que queremos que el navbar cubra toda la pantalla, sino tendria un margen -->
-    <!--Borrar   <li class="nav-item"> -->
     <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-      <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
-      <!-- se agrega bg-dark para dar color negro al menu-->
-      <!-- Con float-left hacemos que flote hacia la izquierda -->
       <div onclick="toggleMenu()" class="close_button">
         <span aria-hidden="true">&times;</span>
       </div>
       <div class="menu_content">
-        <!--menu_content para separar el menu del botón x-->
         <a class="nav-link active" href="#">Active</a>
         <a class="nav-link" href="#">Link</a>
         <a class="nav-link" href="#">Link</a>
@@ -80,13 +69,8 @@
       <div class="col-sm">
         <input id="messageArea" type="text" placeholder="¿En que te podemos ayudar? ">
         <button id="sendPost">SEND</button>
-        <div class="card w-75">
-          <div class="card-body" id="postPrint">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Button</a>
-          </div>
-        </div>
+        
+        
 
         </div>  
     <div class="col-sm">
@@ -101,15 +85,13 @@
 
 
 
-</section>
 
 <!-- Salida Post Uusuario -->
 
 
  
 
-    </div>
-  </div>
+  
 
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
@@ -125,8 +107,8 @@
     crossorigin="anonymous"></script>
   <script src="js/chat.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/loginfb.js"></script>
   <script src="js/post.js"></script>
+  <script src="js/loginfb.js"></script>
 </body>
 
 </html>
