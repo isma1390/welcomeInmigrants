@@ -6,21 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome to Firebase Hosting</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
-  <!-- Link para la librería para la interfaz gráfica de la autentificación -->
+ crossorigin="anonymous">
+<!-- Link para la librería para la interfaz gráfica de la autentificación -->
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
   <link rel="stylesheet" href="css/style.css">
-
-
+<link rel="stylesheet" href="css/stylePost.css"> <!-- Css para Post -->
+  
 </head>
 
 <body>
 
-
-
-
-
+  <!-- Login -->
   <div class="container-fluid">
     <div id="firebaseui-auth-container"></div>
     <u id="out">Sign Out</u>
@@ -39,23 +36,62 @@
       <!-- Post Usuario -->
       <div id="post"></div>
 
-    </div>
-    <section class="secondSection">
+<section class="secondSection">
+  <div class="pos-f-t">
+    
+    <nav class="navbar navbar-dark" style= "background-color: #26A69A;" > 
+      <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
 
-      <div id="postPrint">
-
-
-
+      <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
+      <div onclick="toggleMenu()" class="close_button">
+        <span aria-hidden="true">&times;</span>
       </div>
-      <input id="messageArea" type="text" placeholder="Escriba su mensaje ">
-      <button id="sendPost">SEND</button>
-    </section>
-    <!-- Salida Post Uusuario -->
-
-
-
-
+      <div class="menu_content">
+        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </div>
+    </nav>
   </div>
+  <!-- inicio de img -->
+  <div class="container-fluid">
+    <div class="row">
+      <img src="/imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <input id="messageArea" type="text" placeholder="¿En que te podemos ayudar? ">
+        <button id="sendPost">SEND</button>
+        
+        
+
+        </div>  
+    <div class="col-sm">
+    </div>
+    </div>
+   </div>
+  </section>
+
+  
+  <!-- Termino de post -->
+
+
+
+
+
+<!-- Salida Post Uusuario -->
+
+
+ 
+
+  
 
 
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
@@ -75,6 +111,7 @@
   <script src="js/post.js"></script>
   <script src="js/loginfb.js"></script>
   <script src="js/window.js"></script>
+
 </body>
 
 </html>
