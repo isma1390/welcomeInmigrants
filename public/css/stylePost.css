@@ -1,0 +1,63 @@
+.menu {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  /* viewport height, usa el 100% de la altura de la pantalla*/
+  width: 90vw;
+  /* viewport width 90% del an*/
+  transition: 0.5s ease-out
+}
+
+.menu_closed {
+  left: -90vw;
+}
+
+.menu_open {
+  left: 0;
+}
+
+.close_button {
+  /* configurando boton de cierre del navbar*/
+  font-size: xx-large;
+  color: white;
+  position: absolute;
+  right: 10px;
+}
+
+.menu_content {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+@media(min-width: 768px) {
+  /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
+  .menu {
+    width: 20vw;
+    /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+  }
+  .menu_closed {
+    left: -20vw;
+  }
+}
+.navbar-expand-lg {
+  background-color: rgb(52, 158, 123);
+  text-align: center;
+}
+
+
+.img-fluid{
+  width: 100%;
+  height: 1%;
+}
+
+.containerNavbar {
+  text-align: center
+}
+
+.sendPost{
+  width: 2%;
+}
+.secondSection {
+background-color: #E5E5E5;
+}
+
