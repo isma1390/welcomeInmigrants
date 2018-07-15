@@ -5,8 +5,8 @@ function chatting() {
   /*Estamos buscando el destinatario para poder hacer la ruta entre el que envía el mensaje y quien lo recibe  */
   firebase.database().ref('users')
 
-    .on('child_added', (snapshot) => {
-      usersList = Object.entries(snapshot.val());
+    .on('value', (snapshot) => {
+      usersList = snapshot.val();
       // console.log("los usuarios > " + JSON.stringify(snapshot.val()));
       console.log(usersList);
     });
@@ -15,11 +15,10 @@ function chatting() {
 
   let receiverName = document.getElementById('receiverName');
   receiverName.addEventListener('keypress', () => {
-    usersList.forEach((users) => {
-      return receiver = users.filter(user => user === receiverName.value);
-      console.log(receiver);
-
-    })
+    receiver = Object.values(usersList).filter((user) => {
+      return user.displayName.toUpperCase().indexOf(receiverName.value.toUpperCase()) >= 0;
+    });
+    console.log(receiver);
 
   });
 
@@ -40,7 +39,7 @@ function chatting() {
   firebase.database().ref('messages')
     .limitToLast(1)
     .on('child_added', (newMessage) => {
-      console.log("Nuevo mensaje > " + newMessage.val().text + newMessage.val().receiver);
+      console.log("Nuevo mensaje > " + newMessage.val().text + JSON.stringify(newMessage.val().receiver));
       messageContainer.innerHTML += `
                 <p>Nombre : ${newMessage.val().creatorName}</p>
                 <p>${newMessage.val().text}</p>
