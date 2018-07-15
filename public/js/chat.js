@@ -1,4 +1,29 @@
+/* Se realiza una función que ejecute la función de mensajes directos */
 function chatting() {
+
+
+  /*Estamos buscando el destinatario para poder hacer la ruta entre el que envía el mensaje y quien lo recibe  */
+  firebase.database().ref('users')
+
+    .on('child_added', (snapshot) => {
+      usersList = Object.entries(snapshot.val());
+      console.log("los usuarios > " + JSON.stringify(snapshot.val()));
+      console.log(usersList);
+    });
+
+
+
+  let receiverName = document.getElementById('receiverName')
+  receiverName.addEventListener('keypress', () => {
+    usersList.forEach((usr) => {
+      return receiver = usr.filter(usr2 => usr === receiverName.value);
+
+      console.log(receiver);
+    })
+
+  });
+
+
   console.log("Setting up chat listener...");
   firebase.database().ref('messages')
     .limitToLast(2) // Filtro para no obtener todos los mensajes
@@ -15,7 +40,7 @@ function chatting() {
   firebase.database().ref('messages')
     .limitToLast(1)
     .on('child_added', (newMessage) => {
-      console.log("Nuevo mensaje > " + newMessage.val().text);
+      console.log("Nuevo mensaje > " + newMessage.val().text + newMessage.val().receiver);
       messageContainer.innerHTML += `
                 <p>Nombre : ${newMessage.val().creatorName}</p>
                 <p>${newMessage.val().text}</p>
@@ -24,7 +49,7 @@ function chatting() {
 };
 
 
-// Firebase Database
+
 
 // Usaremos una colección para guardar los mensajes, llamada messages
 function sendMessage() {
@@ -38,6 +63,7 @@ function sendMessage() {
   firebase.database().ref(`messages/${newMessageKey}`).set({
     creator: currentUser.uid,
     creatorName: currentUser.displayName,
+    receiver: receiver,
     text: messageAreaTextChat
   });
 }

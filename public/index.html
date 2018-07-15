@@ -28,8 +28,14 @@
     <div id="messageContainer"></div>
     <div class="row">
 
+      <label for="usr">Destinatario:</label>
+    </div>
+    <div class="row">
+      <input type="text" class="form-control col-md-4" id="receiverName">
       <label for="exampleFormControlTextarea1"></label>
-      <textarea class="form-control" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+    </div>
+    <div class="row">
+      <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
     </div>
     <div class="row">
       <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
@@ -75,6 +81,7 @@
   <script src="js/post.js"></script>
   <script src="js/loginfb.js"></script>
   <script src="js/window.js"></script>
+  <script src="js/users.js"></script>
 </body>
 
 </html>

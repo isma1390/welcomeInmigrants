@@ -1,5 +1,5 @@
 // opcionalmente modifico el scope
-provider.addScope('user_friends');
+// provider.addScope('user_friends');
 
 
 
@@ -16,6 +16,3 @@ provider.addScope('user_friends');
 //     });
 
 // })
-
-
-

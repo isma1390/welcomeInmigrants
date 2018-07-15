@@ -1,4 +1,7 @@
 //Variables Globales
+let userCreate = null;
+let receiver = null;
+let userList = null;
 
 // Initialize Firebase
 var config = {
@@ -40,10 +43,22 @@ document.addEventListener('DOMContentLoaded', function () {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
+
+        userCreate = firebase.database().ref('users/' + user.uid); +
+        userCreate.set({
+          displayName: user.displayName || user.providerData[0].email,
+          email: user.email || user.providerData[0].email,
+          photoUrl: user.photoURL || "",
+          createdOn: user.metadata.createdAt || new Date()
+
+        })
+        console.log(user.uid + user.displayName);
       } else {
         document.getElementById("firebaseui-auth-container").innerHTML = "";
         ui.start('#firebaseui-auth-container', uiConfig);
       }
+
+
     });
   } catch (e) {
     console.error(e);
