@@ -7,18 +7,18 @@ function chatting() {
 
     .on('child_added', (snapshot) => {
       usersList = Object.entries(snapshot.val());
-      console.log("los usuarios > " + JSON.stringify(snapshot.val()));
+      // console.log("los usuarios > " + JSON.stringify(snapshot.val()));
       console.log(usersList);
     });
 
 
 
-  let receiverName = document.getElementById('receiverName')
+  let receiverName = document.getElementById('receiverName');
   receiverName.addEventListener('keypress', () => {
-    usersList.forEach((usr) => {
-      return receiver = usr.filter(usr2 => usr === receiverName.value);
-
+    usersList.forEach((users) => {
+      return receiver = users.filter(user => user === receiverName.value);
       console.log(receiver);
+
     })
 
   });
