@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let ui = new firebaseui.auth.AuthUI(firebase.auth());
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        console.log(user)
         document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
 
         userCreate = firebase.database().ref('users/' + user.uid); +
@@ -71,4 +72,6 @@ out.addEventListener('click', () => {
     }).catch(function (error) {
       // An error happened.
     });
+
 });
+
