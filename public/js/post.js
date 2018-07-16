@@ -1,5 +1,16 @@
   // POST USUARIO
 function posting() {
+  btnValidar.addEventListener("click", () => {
+    if (InputEmail.value == "" || InputPassword.value == "") {
+      alert("Debe introducir su correo electronico o contraseña");
+    } else if (InputPassword.value.length < 8) {
+      alert("Por favor introduzca solo 8 digitos numericos");
+    }
+    post.style.display = "block";
+    login.style.display = "none";
+  });
+
+  // POST INICIO
   sendPost.addEventListener("click", () => {
     firebase
       .database()
@@ -32,16 +43,23 @@ function posting() {
           creator: currentUser.displayName,
           creatorName: currentUser.email,
           text: postAreaText
+          contador: contador
         });  
   });
+  //contador
+  let contador = 0;
+  mundoLike.onclick = function() {
+    printLike.innerHTML= contador++;
+  };
 }
-  // Borrar post
+//Borrar Post
+
 function deletePost(event) {
   event.stopPropagation();
   const postId = event.target.getAttribute("data-post");
   const postRef = firebase.database().ref("post").child(postId);
   postRef.remove();
-  postPrint.removeChild(postPrint.childNodes[0] && postPrint.childNodes[1]);  
+  postPrint.removeChild(postPrint.childNodes[0] && postPrint.childNodes[1]); 
 }
 
 // Editar post
@@ -61,3 +79,4 @@ function updatePost() {
 });
   
 }
+
