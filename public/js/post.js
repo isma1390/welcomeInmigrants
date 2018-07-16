@@ -39,7 +39,9 @@ function posting() {
       .set({
         creator: currentUser.displayName,
         creatorName: currentUser.email,
-        text: messageAreaText
+        text: messageAreaText,
+        contador: contador
+
       });
   });
 
