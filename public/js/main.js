@@ -1,4 +1,7 @@
 //Variables Globales
+let userCreate = null;
+let receiver = null;
+let userList = null;
 
 // Initialize Firebase
 var config = {
@@ -16,15 +19,7 @@ let provider = new firebase.auth.GoogleAuthProvider();
 //Autenticación
 
 document.addEventListener('DOMContentLoaded', function () {
-  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-  // // The Firebase SDK is initialized and available here!
-  //
-  // firebase.auth().onAuthStateChanged(user => { });
-  // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-  // firebase.messaging().requestPermission().then(() => { });
-  // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-  //
-  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
 
   try {
     let app = firebase.app();
@@ -41,14 +36,28 @@ document.addEventListener('DOMContentLoaded', function () {
       if (user) {
         console.log(user)
         document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
+
+        userCreate = firebase.database().ref('users/' + user.uid); +
+        userCreate.set({
+          displayName: user.displayName || user.providerData[0].email,
+          email: user.email || user.providerData[0].email,
+          photoUrl: user.photoURL || "",
+          createdOn: user.metadata.createdAt || new Date(),
+          uid: user.uid
+
+        })
+        console.log(user.uid + user.displayName);
       } else {
         document.getElementById("firebaseui-auth-container").innerHTML = "";
         ui.start('#firebaseui-auth-container', uiConfig);
       }
+
+
     });
   } catch (e) {
     console.error(e);
   }
+  firebase.database().ref('/users').on('value', showContacts);
 });
 out.addEventListener('click', () => {
   firebase.auth().signOut()
@@ -59,4 +68,3 @@ out.addEventListener('click', () => {
     });
 
 });
-

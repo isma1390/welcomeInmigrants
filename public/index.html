@@ -13,9 +13,11 @@
   <!-- Link para la librería para la interfaz gráfica de la autentificación -->
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <!-- Iconos y fuentes de  Font Awesome's -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/stylePost.css">
-  <!-- Css para Post -->
 
 </head>
 
@@ -57,16 +59,32 @@
   <!-- CAROOOOOOOOOOO 
   <section>
   <div class="container-fluid">
+    <div id="firebaseui-auth-container"></div>
+    <u id="out">Sign Out</u>
+    <!-- Pintura del chat -->
+    <div id="contactsChat"></div>
 
     <div id="messageContainer"></div>
+    <div id="listContacts"></div>
     <div class="row">
 
+      <label for="usr">Destinatario:</label>
+    </div>
+    <div class="row">
+      <input type="text" class="form-control col-md-4" id="receiverName">
       <label for="exampleFormControlTextarea1"></label>
-      <textarea class="form-control" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+    </div>
+    <div class="row">
+      <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
     </div>
     <div class="row">
       <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
     </div>
+  </div>
+  <!-- Menú -->
+  <section class="secondSection">
+    <div class="pos-f-t">
+
 
     <div class="row">
 
@@ -78,6 +96,7 @@
   <!-- ISMARYYYYYYYYYYYYYYYYYYYY -->
   <section class="secondSection" id="post">
     <div class="pos-f-t">
+
 
       <nav class="navbar navbar-dark" style="background-color: #26A69A;">
         <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
@@ -109,17 +128,13 @@
         <div class="col-sm">
         </div>
         <div class="col-sm">
-          <input id="messageArea" name="prueba " type="text" placeholder="¿En que te podemos ayudar? ">
+          <input id="postArea" name="prueba " type="text" placeholder="¿En que te podemos ayudar? ">
           <button id="sendPost">SEND</button>
 
           <div id="postPrint">
 
 
-          </div>
-          <button id="mundoLike">
-            <i class="fas fa-globe-americas"></i>
-         </button>
-        <div id="printLike"></div>
+          
 
          
 
@@ -145,6 +160,45 @@
 
 
 
+
+        <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
+      </div>
+       <!-- Post Usuario -->
+      <div class="col-sm"></div>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <!-- Caja de comentarios -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
+              <button class="btn btn-light" id="sendPost">SEND</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <!-- div para almacenar post -->
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div class="card" style="width: 100%;" id="postPrint">
+            <!-- aquí dentro van los post -->
+            </div>
+          <button id="mundoLike">
+            <i class="fas fa-globe-americas"></i>
+         </button>
+        <div id="printLike"></div>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+    </div>  
+  </section>
+  <!-- Termino de post -->
+
+
+
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
@@ -162,7 +216,13 @@
   <script src="js/post.js"></script>
   <script src="js/loginfb.js"></script>
   <script src="js/window.js"></script>
-
+  <script src="js/users.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 
 </html>
+
+
+
+
+
