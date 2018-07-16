@@ -35,26 +35,6 @@ function posting() {
         });  
   });
 }
-
-  
-  // Editar post
-  function updatePost() {
-    let postEditRef = firebase.database().ref(`post/${newPostKey}`);
-
-    // 
-    return postEditRef.update({
-    text: messageAreaText
-    })
-    .then(function() {
-    console.log("El documento ha sido editado");
-    })
-    .catch(function(error) {
-    // The document probably doesn't exist.
-    console.error("Error al editar el documento ", error);
-});
-    
-  }
-
   // Borrar post
 function deletePost(event) {
   event.stopPropagation();
@@ -62,5 +42,22 @@ function deletePost(event) {
   const postRef = firebase.database().ref("post").child(postId);
   postRef.remove();
   postPrint.removeChild(postPrint.childNodes[0] && postPrint.childNodes[1]);  
+}
 
+// Editar post
+function updatePost() {
+  let postEditRef = firebase.database().ref(`post/${newPostKey}`);
+
+  // 
+  return postEditRef.update({
+  text: messageAreaText
+  })
+  .then(function() {
+  console.log("El documento ha sido editado");
+  })
+  .catch(function(error) {
+  // The document probably doesn't exist.
+  console.error("Error al editar el documento ", error);
+});
+  
 }
