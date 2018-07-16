@@ -1,3 +1,25 @@
 #messageContainer {
   height: 70vh;
 }
+body{
+  background-image: url("/imagenes/1531687446992644.JPG");
+  background-size: 100%;
+}
+h1{
+  text-align: center;
+  font-family: 'Muli',  sans-serif;
+}
+.col-sm{
+text-align: center;
+}
+.card{
+  margin: 15%;
+}
+
+#post{
+display: none;
+}
+#img{
+  height: 10%;
+
+}
