@@ -1,5 +1,16 @@
   // POST USUARIO
 function posting() {
+  btnValidar.addEventListener("click", () => {
+    if (InputEmail.value == "" || InputPassword.value == "") {
+      alert("Debe introducir su correo electronico o contraseña");
+    } else if (InputPassword.value.length < 8) {
+      alert("Por favor introduzca solo 8 digitos numericos");
+    }
+    post.style.display = "block";
+    login.style.display = "none";
+  });
+
+  // POST INICIO
   sendPost.addEventListener("click", () => {
     firebase
       .database()
@@ -32,18 +43,22 @@ function posting() {
           creator: currentUser.displayName,
           creatorName: currentUser.email,
           text: postAreaText
+          contador: contador
         });  
   });
+  //contador
+  let contador = 0;
+  mundoLike.onclick = function() {
+    printLike.innerHTML= contador++;
+  };
 }
-
+//Borrar Post
 function deletePost(event) {
   event.stopPopagation();
   const postId = event.target.getAttribute("data-post");
   const postRef = firebase.database().ref("post").child(postId);
   postRef.remove();
   postPrint.removeChild(postPrint.childNodes[0] && postPrint.childNodes[1]);  
-
-}
   
   // Editar post
   function updatePost() {
@@ -51,7 +66,7 @@ function deletePost(event) {
 
     // 
     return postEditRef.update({
-    text: messageAreaText
+    text:postAreaText
     })
     .then(function() {
     console.log("El documento ha sido editado");
@@ -59,6 +74,6 @@ function deletePost(event) {
     .catch(function(error) {
     // The document probably doesn't exist.
     console.error("Error al editar el documento ", error);
-});
-    
+});   
   }
+
