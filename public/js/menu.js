@@ -1,4 +1,5 @@
-function toggleMenu() {
+function Menu() {
+  function toggleMenu() {
     // añadir función onclick="toggleMenu()" al botón del nav bar y al botón cerrar.
     if (sideMenu.className.indexOf("menu_closed") >= 0) {
       // primero revisamos si la clase d-none esta
@@ -16,4 +17,6 @@ function toggleMenu() {
   function closeMenu() {
     sideMenu.classList.add("menu_closed"); // añadimos la clase display-none
     sideMenu.classList.remove("menu_open");
-  }
+  } 
+};
+
