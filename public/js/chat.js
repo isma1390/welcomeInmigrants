@@ -54,7 +54,8 @@ function chatting() {
 function sendMessage() {
   const currentUser = firebase.auth().currentUser;
   const messageAreaTextChat = txt.value;
-  txt.value = "";
+  txt.value = '';
+  console.log(currentUser);
 
   //Para tener una nueva llave en la colección messages
   const newMessageKey = firebase.database().ref().child('messages').push().key;
@@ -65,4 +66,31 @@ function sendMessage() {
     receiver: receiver,
     text: messageAreaTextChat
   });
+}
+
+let createChat = (uid1, uid2) => {
+  if (uid1 > uid2) {
+    return uid1 + uid2;
+  } else {
+    return uid2 + uid1;
+  }
+
+}
+
+let privateChat = (uid, name, picture) => {
+  if (chatRef) {
+    chatRef.off();
+  }
+  const chatRef = firebase.database().ref('chats/') + createChat(uid, firebase.auth().currentUser.uid + '/messages');
+  chatRef.on('value', sendMessage);
+  document.getElementById('contactsChat').innerHTML = `<img src="${picture}" height="32" width="32">${name}`;
+
+}
+
+const showContacts = (snapshot) => {
+  let contactsByOrder = '<ul>';
+  Object.values(snapshot.val()).forEach((user) => {
+    contactsByOrder += `<li><img src="${user.photoUrl}" height="16" width="16"> <a href="#" onclick="privateChat('${user.uid}', '${user.name}', '${user.photoUrl}')">${user.name} </a></li>`
+  })
+  document.getElementById('listContacts').innerHTML = contactsByOrder + "</ul>";
 }

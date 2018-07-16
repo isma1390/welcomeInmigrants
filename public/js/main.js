@@ -19,15 +19,7 @@ let provider = new firebase.auth.GoogleAuthProvider();
 //Autenticación
 
 document.addEventListener('DOMContentLoaded', function () {
-  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-  // // The Firebase SDK is initialized and available here!
-  //
-  // firebase.auth().onAuthStateChanged(user => { });
-  // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-  // firebase.messaging().requestPermission().then(() => { });
-  // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-  //
-  // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
 
   try {
     let app = firebase.app();
@@ -50,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
           displayName: user.displayName || user.providerData[0].email,
           email: user.email || user.providerData[0].email,
           photoUrl: user.photoURL || "",
-          createdOn: user.metadata.createdAt || new Date()
+          createdOn: user.metadata.createdAt || new Date(),
+          uid: user.uid
 
         })
         console.log(user.uid + user.displayName);
@@ -64,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (e) {
     console.error(e);
   }
+  firebase.database().ref('/users').on('value', showContacts);
 });
 out.addEventListener('click', () => {
   firebase.auth().signOut()
@@ -74,4 +68,3 @@ out.addEventListener('click', () => {
     });
 
 });
-
