@@ -94,3 +94,4 @@ const showContacts = (snapshot) => {
   })
   document.getElementById('listContacts').innerHTML = contactsByOrder + "</ul>";
 }
+
