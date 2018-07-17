@@ -50,7 +50,7 @@ function deletePost(event) {
       console.error('Error al editar el borrado', error);
     });
 }
-
+/*
 // Editar post
 function updatePost(eventUpdate) {
   /*
@@ -70,7 +70,7 @@ function updatePost(eventUpdate) {
         // The document probably doesn't exist.
         console.error('Error al editar el documento', error);
       });
-  }*/
+  }
 };
 
 /*
