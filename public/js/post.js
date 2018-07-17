@@ -1,17 +1,5 @@
 // POST USUARIO
 function posting() {
-  btnValidar.addEventListener("click", () => {
-    if (InputEmail.value == "" || InputPassword.value == "") {
-      alert("Debe introducir su correo electronico o contraseña");
-    } else if (InputPassword.value.length < 8) {
-      alert("Por favor introduzca solo 8 digitos numericos");
-    }
-    post.style.display = "block";
-    login.style.display = "none";
-  });
-
-  // POST INICIO
-
   sendPost.addEventListener("click", () => {
     firebase
       .database()
@@ -49,7 +37,6 @@ function posting() {
         creator: currentUser.displayName,
         creatorName: currentUser.email,
         text: postAreaText,
-        contador: like
       });
   });
 
