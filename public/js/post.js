@@ -28,7 +28,7 @@ function posting() {
         .set({
           creator: currentUser.displayName,
           creatorEmail: currentUser.email,
-          text: postAreaText
+          text: postAreaText,
           contador: contador
         });  
   });
