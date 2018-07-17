@@ -13,6 +13,7 @@
   <!-- Link para la librería para la interfaz gráfica de la autentificación -->
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <!-- Iconos y fuentes de  Font Awesome's -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/stylePost.css">
   <!-- Css para Post -->
@@ -54,29 +55,56 @@
       </div>
     </div>
   </section>
-  <!-- CAROOOOOOOOOOO 
-  <section>
-  <div class="container-fluid">
 
-    <div id="messageContainer"></div>
-    <div class="row">
+  <!-- Pintura del chat 
+  <div id="contactsChat"></div>
+  <div id="messageContainer"></div>
+  <div id="listContacts"></div>
+  <div class="row">    
+    <label for="usr">Destinatario:</label>
+  </div>
+  <div class="row">
+    <input type="text" class="form-control col-md-4" id="receiverName">
+    <label for="exampleFormControlTextarea1"></label>
+  </div>
+  <div class="row">
+    <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+  </div>
+  </div>-->
+  <!-- Perfil -->
+<body>
+  <div class="pos-f-t">
+    <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
+    <nav class="navbar navbar-dark bg-dark">
+      <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
+      <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    
+    <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
+      <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
+      <!-- se agrega bg-dark para dar color negro al menu-->
+      <!-- Con float-left hacemos que flote hacia la izquierda -->
+      <div onclick="toggleMenu()" class="close_button">
+        <span aria-hidden="true">&times;</span>
+      </div>
+      <div class="menu_content">
+        <!--menu_content para separar el menu del botón x-->
+        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </div>
+    </nav>
+  </div>
 
-      <label for="exampleFormControlTextarea1"></label>
-      <textarea class="form-control" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
-    </div>
 
-    <div class="row">
-
-    </section>
-    <div id="post"></div>
-    <!-- CAROOOOOOO 
-      <!-- Post Usuario -->
-
-  <!-- ISMARYYYYYYYYYYYYYYYYYYYY -->
-  <section class="secondSection" id="post">
+  <section class="secondSection">
     <div class="pos-f-t">
 
       <nav class="navbar navbar-dark" style="background-color: #26A69A;">
@@ -103,46 +131,36 @@
     <!-- inicio de img -->
     <div class="container-fluid">
       <div class="row">
-        <div id="img">
-          <img src="/imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
-        </div>
-        <div class="col-sm">
-        </div>
-        <div class="col-sm">
-          <input id="messageArea" name="prueba " type="text" placeholder="¿En que te podemos ayudar? ">
-          <button id="sendPost">SEND</button>
-
-          <div id="postPrint">
-
-
+        <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
+      </div>
+      <!-- Post Usuario -->
+      <div class="col-sm"></div>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <!-- Caja de comentarios -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
+              <button class="btn btn-light" id="sendPost">SEND</button>
+            </div>
           </div>
-          <button id="mundoLike">
-            <i class="fas fa-globe-americas"></i>
-         </button>
-        <div id="printLike"></div>
-
-         
-
         </div>
-        <div class="col-sm">
+        <div class="col-sm-3"></div>
+      </div>
+      <!-- div para almacenar post -->
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div class="card" style="width: 100%;" id="postPrint">
+            <!-- aquí dentro van los post -->
+          </div>
         </div>
+        <div class="col-sm-3"></div>
       </div>
     </div>
   </section>
-
-
   <!-- Termino de post -->
-
-
-
-
-
-  <!-- Salida Post Uusuario -->
-
-
-
-
-
 
 
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
@@ -162,7 +180,8 @@
   <script src="js/post.js"></script>
   <script src="js/loginfb.js"></script>
   <script src="js/window.js"></script>
-
+  <script src="js/users.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 
 </html>
