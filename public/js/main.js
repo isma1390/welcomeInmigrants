@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (user) {
         console.log(user)
         document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
-
         userCreate = firebase.database().ref('users/' + user.uid); +
         userCreate.set({
           displayName: user.displayName || user.providerData[0].email,
@@ -50,9 +49,16 @@ document.addEventListener('DOMContentLoaded', function () {
   } catch (e) {
     console.error(e);
   }
+
+  firebase.database().ref('/users').on('value', showContacts);
+  firebase.database().ref("/post").on("value", drawPosts);
+
   document.getElementById('receiverName').addEventListener('keyup', findReceiver);
   document.getElementById('receiverName').addEventListener('click', loadContacts);
+
 });
+
 out.addEventListener('click', () => {
   firebase.auth().signOut();
+
 });
