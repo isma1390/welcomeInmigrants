@@ -1,5 +1,16 @@
   // POST USUARIO
 function posting() {
+  btnValidar.addEventListener("click", () => {
+    if (InputEmail.value == "" || InputPassword.value == "") {
+      alert("Debe introducir su correo electronico o contraseña");
+    } else if (InputPassword.value.length < 8) {
+      alert("Por favor introduzca solo 8 digitos numericos");
+    }
+    post.style.display = "block";
+    login.style.display = "none";
+  });
+
+  // POST INICIO
   sendPost.addEventListener("click", () => {
       const currentUser = firebase.auth().currentUser;
       const postAreaText = postArea.value;
@@ -18,10 +29,17 @@ function posting() {
           creator: currentUser.displayName,
           creatorEmail: currentUser.email,
           text: postAreaText
+          contador: contador
         });  
   });
+  //contador
+  let contador = 0;
+  mundoLike.onclick = function() {
+    printLike.innerHTML= contador++;
+  };
 }
-  // Borrar post
+//Borrar Post
+
 function deletePost(event) {
   event.stopPropagation(); //se activa solamente donde se hace click
   const postId = event.target.getAttribute("data-post");
@@ -64,3 +82,4 @@ const drawPosts = (posts) => {
         `;
   });
 }
+
