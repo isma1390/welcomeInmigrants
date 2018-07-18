@@ -14,91 +14,54 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
   <!-- Iconos y fuentes de  Font Awesome's -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/stylePost.css">
-<<<<<<< HEAD
-  <!-- Css para Post -->
-=======
->>>>>>> 2ba884939d7952ca72de337a5035677becc16167
 
 </head>
 
 <body>
-
   <!-- Login -->
-  <section class="firstSection" id="login">
-    <div class="container-fluid">
+  <div class="container-fluid">
+    <div id="firebaseui-auth-container"></div>
+    <u id="out">Sign Out</u>
+    <!-- Pintura del chat -->
+    <div class="chatZone">
+      <div id="messageContainer"></div>
       <div class="row">
-        <div class="col-sm">
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <div>
-                <h1>SOCIAL INMG</h1>
-              </div>
-              <label class="colorCorreo" for="exampleInputEmail1">
-                <i class="far fa-envelope"> </i> Correo Electronico</label>
-              <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-              <div class="form-group">
-                <label class="colorCorreo" for=" exampleInputPassword1">
-                  <i class="fas fa-key"></i> Contraseña</label>
-                <input type="password" class="form-control" id="InputPassword" placeholder="Password">
-              </div>
-              <div class="form-group form-check">
-              </div>
-              <button type="text" id="btnValidar" class="btn btn-primary"> Entrar</button>
-              <u id="out">Sign Out</u>
-              <div id="firebaseui-auth-container"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-        </div>
+        <label for="usr">Destinatario:</label>
+      </div>
+      <div class="row">
+        <input type="text" class="form-control col-md-4" id="receiverName">
+        <div id="contactsChat"></div>
+      </div>
+      <div class="row">
+        <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
       </div>
     </div>
-  </section>
-<<<<<<< HEAD
-
-  <!-- Pintura del chat 
-  <div id="contactsChat"></div>
-  <div id="messageContainer"></div>
-  <div id="listContacts"></div>
-  <div class="row">    
-    <label for="usr">Destinatario:</label>
   </div>
-  <div class="row">
-    <input type="text" class="form-control col-md-4" id="receiverName">
-    <label for="exampleFormControlTextarea1"></label>
-  </div>
-  <div class="row">
-    <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-  </div>
-  <div class="row">
-    <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
-  </div>
-  </div>-->
-  <!-- Perfil -->
-<body>
+<!-- Menú -->
+<section class="secondSection">
   <div class="pos-f-t">
-    <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
-    <nav class="navbar navbar-dark bg-dark">
-      <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
+
+    <nav class="navbar navbar-dark" style="background-color: #26A69A;">
+      <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
+
       <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
         aria-label="Toggle navigation">
+
         <span class="navbar-toggler-icon"></span>
       </button>
     </nav>
-    
     <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-      <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
-      <!-- se agrega bg-dark para dar color negro al menu-->
-      <!-- Con float-left hacemos que flote hacia la izquierda -->
       <div onclick="toggleMenu()" class="close_button">
         <span aria-hidden="true">&times;</span>
       </div>
       <div class="menu_content">
-        <!--menu_content para separar el menu del botón x-->
         <a class="nav-link active" href="#">Active</a>
         <a class="nav-link" href="#">Link</a>
         <a class="nav-link" href="#">Link</a>
@@ -106,179 +69,42 @@
       </div>
     </nav>
   </div>
-=======
-  <!-- CAROOOOOOOOOOO 
-  <section>
+  <!-- inicio de img -->
   <div class="container-fluid">
-    <div id="firebaseui-auth-container"></div>
-    <u id="out">Sign Out</u>
-    <!-- Pintura del chat -->
-    <div id="contactsChat"></div>
-
-    <div id="messageContainer"></div>
-    <div id="listContacts"></div>
     <div class="row">
-
-      <label for="usr">Destinatario:</label>
+      <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
     </div>
+    <!-- Post Usuario -->
+    <div class="col-sm"></div>
     <div class="row">
-      <input type="text" class="form-control col-md-4" id="receiverName">
-      <label for="exampleFormControlTextarea1"></label>
-    </div>
-    <div class="row">
-      <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
-    </div>
-  </div>
-  <!-- Menú -->
-  <section class="secondSection">
-    <div class="pos-f-t">
-
-
-    <div class="row">
->>>>>>> 2ba884939d7952ca72de337a5035677becc16167
-
-
-  <section class="secondSection">
-    <div class="pos-f-t">
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 2ba884939d7952ca72de337a5035677becc16167
-      <nav class="navbar navbar-dark" style="background-color: #26A69A;">
-        <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
-
-        <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-      <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-        <div onclick="toggleMenu()" class="close_button">
-          <span aria-hidden="true">&times;</span>
-        </div>
-        <div class="menu_content">
-          <a class="nav-link active" href="#">Active</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link" href="#">Link</a>
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </div>
-      </nav>
-    </div>
-    <!-- inicio de img -->
-    <div class="container-fluid">
-      <div class="row">
-<<<<<<< HEAD
-        <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
-      </div>
-      <!-- Post Usuario -->
-      <div class="col-sm"></div>
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <!-- Caja de comentarios -->
-          <div class="card" style="width: 100%;">
-            <div class="card-body">
-              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
-              <button class="btn btn-light" id="sendPost">SEND</button>
-            </div>
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <!-- Caja de comentarios -->
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
+            <button class="btn btn-light" id="sendPost">SEND</button>
           </div>
         </div>
-        <div class="col-sm-3"></div>
       </div>
-      <!-- div para almacenar post -->
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <div class="card" style="width: 100%;" id="postPrint">
-            <!-- aquí dentro van los post -->
-          </div>
-        </div>
-        <div class="col-sm-3"></div>
-=======
-        <div id="img">
-          <img src="/imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
-        </div>
-        <div class="col-sm">
-        </div>
-        <div class="col-sm">
-          <input id="postArea" name="prueba " type="text" placeholder="¿En que te podemos ayudar? ">
-          <button id="sendPost">SEND</button>
-
-          <div id="postPrint">
-
-
-          
-
-         
-
-        </div>
-        <div class="col-sm">
-        </div>
->>>>>>> 2ba884939d7952ca72de337a5035677becc16167
-      </div>
+      <div class="col-sm-3"></div>
     </div>
-  </section>
-  <!-- Termino de post -->
-
-
-<<<<<<< HEAD
-=======
-
-
-
-  <!-- Salida Post Uusuario -->
-
-
-
-
-
-
-
-
-        <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
-      </div>
-       <!-- Post Usuario -->
-      <div class="col-sm"></div>
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <!-- Caja de comentarios -->
-          <div class="card" style="width: 100%;">
-            <div class="card-body">
-              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
-              <button class="btn btn-light" id="sendPost">SEND</button>
-            </div>
-          </div>
+    <!-- div para almacenar post -->
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 100%;" id="postPrint">
+          <!-- aquí dentro van los post -->
         </div>
-        <div class="col-sm-3"></div>
-      </div>
-      <!-- div para almacenar post -->
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-          <div class="card" style="width: 100%;" id="postPrint">
-            <!-- aquí dentro van los post -->
-            </div>
-          <button id="mundoLike">
-            <i class="fas fa-globe-americas"></i>
-         </button>
         <div id="printLike"></div>
-          </div>
-        </div>
-        <div class="col-sm-3"></div>
       </div>
-    </div>  
-  </section>
-  <!-- Termino de post -->
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  </div>
+</section>
+<!-- Termino de post -->
 
-
-
->>>>>>> 2ba884939d7952ca72de337a5035677becc16167
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
@@ -292,21 +118,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
   <script src="js/chat.js"></script>
-  <script src="js/main.js"></script>
   <script src="js/post.js"></script>
   <script src="js/loginfb.js"></script>
   <script src="js/window.js"></script>
   <script src="js/users.js"></script>
   <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
-
-
-
-
-
->>>>>>> 2ba884939d7952ca72de337a5035677becc16167

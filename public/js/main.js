@@ -1,7 +1,5 @@
 //Variables Globales
 let userCreate = null;
-let receiver = null;
-let userList = null;
 
 // Initialize Firebase
 var config = {
@@ -19,8 +17,6 @@ let provider = new firebase.auth.GoogleAuthProvider();
 //Autenticación
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
   try {
     let app = firebase.app();
     const uiConfig = {
@@ -36,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (user) {
         console.log(user)
         document.getElementById("firebaseui-auth-container").innerHTML = "Hola " + user.displayName;
-
         userCreate = firebase.database().ref('users/' + user.uid); +
         userCreate.set({
           displayName: user.displayName || user.providerData[0].email,
@@ -44,27 +39,26 @@ document.addEventListener('DOMContentLoaded', function () {
           photoUrl: user.photoURL || "",
           createdOn: user.metadata.createdAt || new Date(),
           uid: user.uid
-
         })
         console.log(user.uid + user.displayName);
       } else {
         document.getElementById("firebaseui-auth-container").innerHTML = "";
         ui.start('#firebaseui-auth-container', uiConfig);
       }
-
-
     });
   } catch (e) {
     console.error(e);
   }
+
   firebase.database().ref('/users').on('value', showContacts);
+  firebase.database().ref("/post").on("value", drawPosts);
+
+  document.getElementById('receiverName').addEventListener('keyup', findReceiver);
+  document.getElementById('receiverName').addEventListener('click', loadContacts);
+
 });
+
 out.addEventListener('click', () => {
-  firebase.auth().signOut()
-    .then(function () {
-      // Sign-out successful.
-    }).catch(function (error) {
-      // An error happened.
-    });
+  firebase.auth().signOut();
 
 });
