@@ -22,7 +22,8 @@ function posting() {
         .set({
           creator: currentUser.displayName,
           creatorEmail: currentUser.email,
-          text: postAreaText
+          text: postAreaText,
+          counter : 0
         });
     }
   });
@@ -39,10 +40,11 @@ const drawPosts = posts => {
              <span>
              <i class="fas fa-edit" data-text="${post[1].text}" onclick="updatePost("eventUpdate") id="editPost"> </i> <i class="fas fa-trash-alt" 
              data-post="${post[0]}" onclick="deletePost(event)"></i>
-             <i class="fas fa-globe-americas" data-like="${post[0]}"onclick="counterLike(event)"></i><span>${post[1].counter}</span>
-             </span>
+             <i class="far fa-hand-peace" data-like="${post[0]}" onclick="counterLike(event)"></i><span>${post[1].counter}</span>
+             </span> 
              </li>
            </ul>
+          
        `;
   });
 };
@@ -51,8 +53,9 @@ function counterLike(event) {
   event.stopPropagation();
   const counterId = event.target.getAttribute('data-like');
   firebase.database().ref(`post/` + counterId).once("value", function(post) {
-      let total = (post.val().counter || 0) + 1;
-      firebase.database().ref(`post`).child(counterId).update({ counter: total });
+    let total = (post.val().counter || 0) + 1;
+      firebase.database().ref(`post`).child(counterId).update({ 
+        counter: total });
     });
 }
 //Borrar Post
