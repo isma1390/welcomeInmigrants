@@ -7,9 +7,7 @@
   position: absolute;
   top: 0;
   height: 100vh;
-  /* viewport height, usa el 100% de la altura de la pantalla*/
   width: 90vw;
-  /* viewport width 90% del an*/
   transition: 0.5s ease-out
 }
 
