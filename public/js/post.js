@@ -1,5 +1,3 @@
-// POST USUARIO
-
 function posting() {
   // POST INICIO
   sendPost.addEventListener("click", () => {
@@ -9,7 +7,7 @@ function posting() {
     if (postAreaText === "") {
       alert("Por favor, debe introducir texto");
     } else {
-      //Para tener una nueva llave en la colección messages
+      //Para tener una nueva llave en la colección post
       let newPostKey = firebase
         .database()
         .ref()
@@ -72,12 +70,3 @@ function deletePost(event) {
     });
 }
 
-//function counterLike(event) {
-//  event.stopPropagation();
-//  const counterId = event.target.getAttribute("data-like");
-//    firebase.database().ref(`post/`+counterId).once("value", function(post) {
-//      let total = post.child("counter").val() || 0 + 1;
-//      console.log(total);
-//      let countId = firebase.database().ref(`post/`).child(counterId).push(
-//        { counter: total });
-//    });

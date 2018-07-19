@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome to Firebase Hosting</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
@@ -22,11 +21,11 @@
 </head>
 
 <body>
-  <!-- Login -->
+  <!-- Login 
   <div class="container-fluid">
     <div id="firebaseui-auth-container"></div>
-    <u id="out">Sign Out</u>
-    <!-- Pintura del chat -->
+    <u id="out">Sign Out</u>-->
+  <!-- Pintura del chat  -->
     <div class="chatZone">
       <div id="messageContainer"></div>
       <div class="row">
@@ -44,66 +43,69 @@
       </div>
     </div>
   </div>
-<!-- Menú -->
-<section class="secondSection">
-  <div class="pos-f-t">
+  <!-- Menú -->
+  <section class="secondSection">
+    <div class="pos-f-t">
 
-    <nav class="navbar navbar-dark" style="background-color: #26A69A;">
-      <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
+      <nav class="navbar navbar-dark" style="background-color: #26A69A;">
+        <a class="navbar-brand" href="#">ALIMENTACIÓN</a>
 
-      <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-        aria-label="Toggle navigation">
+        <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+          aria-label="Toggle navigation">
 
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
-    <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-      <div onclick="toggleMenu()" class="close_button">
-        <span aria-hidden="true">&times;</span>
-      </div>
-      <div class="menu_content">
-        <a class="nav-link active" href="#">Active</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link" href="#">Link</a>
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </div>
-    </nav>
-  </div>
-  <!-- inicio de img -->
-  <div class="container-fluid">
-    <div class="row">
-      <img src="../imagenes/ja-ma-216495-unsplash.jpg" class="img-fluid" alt="Responsive image">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+      <nav id="sideMenu" class="nav flex-column float-left menu  menu_closed" style="background-color: #FCFCFC;" >
+        <div onclick="toggleMenu()" class="close_button text-secondary">
+          <span aria-hidden="true">&times;</span>
+        </div>
+        <div class="menu_content">
+          <a class="nav-link active text-secondary" href="#"> <i class="far fa-user"> </i> Perfil</a>
+          <a class="nav-link text-secondary" href="#"> <i class="far fa-envelope"> </i> Mensajes</a>
+          <a class="nav-link text-secondary" href="#"><i class="fas fa-users"></i> Contactos</a>
+          <a class="nav-link text-secondary" href="#"><i class="fas fa-utensils"></i> Alimentación</a>
+          <a class="nav-link text-secondary" href="#"><i class="fas fa-graduation-cap"></i> Educación</a>
+          <a class="nav-link text-secondary" href="#"><i class="fas fa-briefcase-medical"></i> Salud</a>
+
+        </div>
+      </nav>
     </div>
-    <!-- Post Usuario -->
-    <div class="col-sm"></div>
-    <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
-        <!-- Caja de comentarios -->
-        <div class="card" style="width: 100%;">
-          <div class="card-body">
-            <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
-            <button class="btn btn-light" id="sendPost">SEND</button>
+    <!-- inicio de img -->
+    <div class="container-fluid">
+      <div class="row">
+        <div id="imgAliment"></div>
+      </div>
+      <!-- Post Usuario -->
+      <div class="col-sm"></div>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <!-- Caja de comentarios -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <textarea class="form-control" id="postArea" type="text" placeholder="¿En que te podemos ayudar?"></textarea>
+              <button class="btn btn-light" id="sendPost">SEND</button>
+            </div>
           </div>
         </div>
+        <div class="col-sm-3"></div>
       </div>
-      <div class="col-sm-3"></div>
-    </div>
-    <!-- div para almacenar post -->
-    <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
-        <div class="card" style="width: 100%;" id="postPrint">
-          <!-- aquí dentro van los post -->
+      <!-- div para almacenar post -->
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div class="card" style="width: 100%;" id="postPrint">
+            <!-- aquí dentro van los post -->
+          </div>
+          <div id="printLike"></div>
         </div>
-        <div id="printLike"></div>
       </div>
+      <div class="col-sm-3"></div>
     </div>
-    <div class="col-sm-3"></div>
-  </div>
-  </div>
-</section>
-<!-- Termino de post -->
+    </div>
+  </section>
+  <!-- Termino de post -->
 
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
