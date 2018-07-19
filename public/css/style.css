@@ -2,10 +2,10 @@
   height: 70vh;
 }
 
-#map {
+#mapContent {
   margin: 5%;
-  height: 50%;
-  width: 50%;
+  height: 400px;
+  width: 600px;
 }
 
 #login {
@@ -50,4 +50,8 @@
 
 #postFood {
   display: none;
+}
+
+#welcomeUser {
+  font-family: 'Francois One', sans-serif;
 }

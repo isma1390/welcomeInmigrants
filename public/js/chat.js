@@ -35,7 +35,8 @@ const sendMessage = () => {
       creatorName: currentUser.displayName,
       receiver: receiverName.value,
       text: messageAreaTextChat,
-      read: false
+      read: false,
+      // map: map
     })
 
 
