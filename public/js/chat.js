@@ -1,10 +1,11 @@
 let userList = null;
 let chatRef = null;
-let receiver = null;
+let receivers = null;
 
 const showMessages = (messages) => {
   messageContainer.innerHTML = '';
   messages.forEach((newMessage) => {
+
     messageContainer.innerHTML += `
         <p>Nombre : ${newMessage.val().creatorName}</p>
         <p>${newMessage.val().text}</p>`;
@@ -23,8 +24,9 @@ const sendMessage = () => {
     chatRef.push({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
-      receiver: receiver,
-      text: messageAreaTextChat
+      receiver: receiverName.value,
+      text: messageAreaTextChat,
+      read: false
     });
   }
 }
