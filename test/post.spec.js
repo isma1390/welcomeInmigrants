@@ -14,6 +14,17 @@ require("../../public/js/postFood");
   };
   firebase.initializeApp(config);
 
+  describe("counter", () => {
+    it("debería ser un objeto", () => {
+      assert.equal(typeof counter, "object");
+    });
+  })
+
+    describe("postingFood", () => {
+      it("debería ser una función", () => {
+        assert.equal(typeof window.postingFood, "function");
+      });
+    })
 
   describe("La lista me deberia de devolver currentUser ", () => {
     it("Debería devolverme el objeto que contiene CurrentUser", done => {
@@ -30,5 +41,5 @@ require("../../public/js/postFood");
         })
         .finally(done);
     });
-  });
-
+  })
+        
