@@ -11,3 +11,22 @@
 [debug] [2018-07-19T13:17:54.718Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/welcome-inmigrants  
   
  Thu Jul 19 2018 09:17:54 GMT-0400 (STD)
+[debug] [2018-07-19T13:17:56.015Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T13:17:56.016Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/welcome-inmigrants/tokens  
+  
+ Thu Jul 19 2018 09:17:56 GMT-0400 (STD)
+[debug] [2018-07-19T13:17:56.728Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T13:17:56.730Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/welcome-inmigrants  
+  
+ Thu Jul 19 2018 09:17:56 GMT-0400 (STD)
+[debug] [2018-07-19T13:17:57.860Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/mnt/c/Users/CaroyMitz/Documents/CosasDeMama/LABORATORIA/proyecto-3/welcomeInmigrants'...
+[info] 
+[debug] [2018-07-19T13:17:57.872Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/517706659234/clients/_:getWebAppConfig  
+  
+ Thu Jul 19 2018 09:17:57 GMT-0400 (STD)
+[debug] [2018-07-19T13:17:58.357Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
