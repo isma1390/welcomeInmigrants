@@ -30,6 +30,9 @@ function posting() {
 }
 //Imprimir Post
 const drawPosts = posts => {
+  if (!posts || !posts.val()) {
+    return;
+  }
   postPrint.innerHTML = "";
   Object.entries(posts.val()).forEach(post => {
     postPrint.innerHTML += `

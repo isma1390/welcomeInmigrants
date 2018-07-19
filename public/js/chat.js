@@ -50,12 +50,25 @@ let privateChat = (uid, name, picture) => {
   showContacts([]);
 }
 
+const lastMessages = () => {
+  firebase.database().ref('chats/messages')
+    .limitToLast(5) // Filtro para no obtener todos los mensajes
+    .once('value')
+    .then((chats) => {
+      console.log("Mensajes > " + JSON.stringify(chat));
+    })
+    .catch(() => {
+
+    });
+
+}
+
 const showContacts = (users) => {
   let contactsByOrder = '<ul>';
   users.forEach((user) => {
     contactsByOrder += `<li><img src="${user.photoUrl}" height="16" width="16"> <a href="#" onclick="privateChat('${user.uid}', '${user.displayName}', '${user.photoUrl}')">${user.displayName} </a></li>`
   })
-  // document.getElementById('contactsChat').innerHTML = contactsByOrder + "</ul>";
+  document.getElementById('contactsChat').innerHTML = contactsByOrder + "</ul>";
 }
 
 const loadContacts = () => {
@@ -72,3 +85,11 @@ const findReceiver = (event) => {
   });
   showContacts(receivers);
 };
+
+map.addEventListener('click', () => {
+
+})
+
+mapIcon.addEventListener('click', () => {
+  showMap();
+});
