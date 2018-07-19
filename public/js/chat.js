@@ -55,7 +55,7 @@ const showContacts = (users) => {
   users.forEach((user) => {
     contactsByOrder += `<li><img src="${user.photoUrl}" height="16" width="16"> <a href="#" onclick="privateChat('${user.uid}', '${user.displayName}', '${user.photoUrl}')">${user.displayName} </a></li>`
   })
-  document.getElementById('contactsChat').innerHTML = contactsByOrder + "</ul>";
+  // document.getElementById('contactsChat').innerHTML = contactsByOrder + "</ul>";
 }
 
 const loadContacts = () => {

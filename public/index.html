@@ -36,9 +36,6 @@
         </div>
         <form action="" id="loginContent">
           <div id="firebaseui-auth-container"></div>
-          <p id="out" style="text-align: center">
-            <u>Sign Out</u>
-          </p>
         </form>
       </div>
       <div class="col-sm-4"></div>
@@ -46,23 +43,29 @@
   </div>
 
   <!-- Pintura del chat -->
-  <div class="chatZone">
-    <div id="messageContainer"></div>
-    <div class="row">
-      <label for="usr">Destinatario:</label>
-    </div>
-    <div class="row">
-      <input type="text" class="form-control col-md-4" id="receiverName">
-      <div id="contactsChat"></div>
-    </div>
-    <div class="row">
-      <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+  <div class="container-fluid" id="welcomeUser">
+    <p id="out" style="text-align: left">
+      <div id="userLogin"></div>
+      <u>Sign Out</u>
+    </p>
+
+    <div class="chatZone">
+      <div id="messageContainer"></div>
+      <div class="row">
+        <label for="usr">Destinatario:</label>
+      </div>
+      <div class="row">
+        <input type="text" class="form-control col-md-4" id="receiverName">
+        <div id="contactsChat"></div>
+      </div>
+      <div class="row">
+        <textarea class="form-control col-md-4" id="txt" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-outline-success" id="sendButton" value="SEND" onclick="sendMessage()">Enviar</button>
+      </div>
     </div>
   </div>
-
   <!-- Menú -->
   <section class="secondSection">
     <div class="pos-f-t">
